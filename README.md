@@ -11,16 +11,21 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 ## Steps for execution:
 
 1.	Sign into AWS console. Navigate to AWS Transfer service and create an SFTP server with the appropriate settings.
-2.	Once the server is setup, then add users to it by giving them appropriate permissions to access the S3 bucket into which files are to be uploaded.
-3.	By using WinSCP tool, input the server access credentials and securely upload the invoice file which gets uploaded into S3 bucket into Input folder. 
-4.	The file uploaded into the bucket will trigger Input File Split lambda function.
-5.	The Input File Split lambda function will split the records read from invoice file into individual json files for each customer. These files are stored in /individual-json prefix in the same S3 bucket.
-6.	These individual files created will inturn trigger another lambda function called Bill Notification Process.
-7.	The Bill Notification Process lambda will read each individual file and fetch customer data from Customer Profile table to determine the SMS consent pre-selected by the customer. ( DynaomoDB table has been pre-created and populated with Customer Profile data with customer_id as partition key).
-8.	For local testing of Lambda functions, download the functions to Cloud9 environment, create event.json and template .yaml files. Use below code from terminal to test the functions.
-9.	Once local testing is successful, upload the Lambda functions into AWS console. For Input File Split function add permissions to access S3 to the execution role. Similarly for Bill Notification Process function, add permissions to access S3, DynamoDB, SES and API Gateway.
-10.	 If SMS consent is Yes, then a SMS is sent to the customer using third party application via API Gateway. For this configure a MOCK integration on API Gateway with POST method.
-11.	 If SMS consent is No, then an email is sent to the customer using SES service. For testing purposes, verify the Identities of the destination email ids in the SES console.
+   
+   ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP-Server_1.jpg))
+
+   ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_Server2.jpg))
+   
+3.	Once the server is setup, then add users to it by giving them appropriate permissions to access the S3 bucket into which files are to be uploaded.
+4.	By using WinSCP tool, input the server access credentials and securely upload the invoice file which gets uploaded into S3 bucket into Input folder. 
+5.	The file uploaded into the bucket will trigger Input File Split lambda function.
+6.	The Input File Split lambda function will split the records read from invoice file into individual json files for each customer. These files are stored in /individual-json prefix in the same S3 bucket.
+7.	These individual files created will inturn trigger another lambda function called Bill Notification Process.
+8.	The Bill Notification Process lambda will read each individual file and fetch customer data from Customer Profile table to determine the SMS consent pre-selected by the customer. ( DynaomoDB table has been pre-created and populated with Customer Profile data with customer_id as partition key).
+9.	For local testing of Lambda functions, download the functions to Cloud9 environment, create event.json and template .yaml files. Use below code from terminal to test the functions.
+10.	Once local testing is successful, upload the Lambda functions into AWS console. For Input File Split function add permissions to access S3 to the execution role. Similarly for Bill Notification Process function, add permissions to access S3, DynamoDB, SES and API Gateway.
+11.	 If SMS consent is Yes, then a SMS is sent to the customer using third party application via API Gateway. For this configure a MOCK integration on API Gateway with POST method.
+12.	 If SMS consent is No, then an email is sent to the customer using SES service. For testing purposes, verify the Identities of the destination email ids in the SES console.
 
 ## Result and Observations:
 
