@@ -6,6 +6,7 @@ The billing notification system utilizes AWS services to streamline communicatio
 ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Design.png)
 
 
+
 ## Pre – requisites:
 
 Create an S3 bucket named billing-notification-system with Input prefix. Also create an event notification trigger when files get uploaded into this path which triggers an Input File Split lambda function.
