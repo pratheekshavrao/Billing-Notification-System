@@ -12,9 +12,9 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 
 1.	Sign into AWS console. Navigate to AWS Transfer service and create an SFTP server with the appropriate settings.
    
-   ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP-Server_1.jpg))
+    ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP-Server_1.jpg))
 
-   ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_Server2.jpg))
+    ![alt text]([http://url/to/img.png](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_Server2.jpg))
    
 3.	Once the server is setup, then add users to it by giving them appropriate permissions to access the S3 bucket into which files are to be uploaded.
 4.	By using WinSCP tool, input the server access credentials and securely upload the invoice file which gets uploaded into S3 bucket into Input folder. 
