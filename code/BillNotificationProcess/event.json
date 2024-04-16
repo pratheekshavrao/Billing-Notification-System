@@ -1,0 +1,14 @@
+{
+   "Records":[
+       {
+           "s3":{
+               "bucket":{
+                   "name": "billing-notification-system"
+               },
+                "object":{
+                    "key": "individual-json/1001-1711126064822.json"
+            }
+           }
+       }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+   "Records":[
+       {
+           "s3":{
+               "bucket":{
+                   "name": "billing-notification-system"
+               },
+                "object":{
+                    "key": "input/InputFile.csv"
+            }
+           }
+       }
+    ]
+}
