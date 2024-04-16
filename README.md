@@ -49,6 +49,10 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 5.	The Input File Split lambda function will split the records read from invoice file into individual json files for each customer. These files are stored in /individual-json prefix in the same S3 bucket.
 
    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Input_File_Split_Lambda.jpg)
+
+   ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Individual_files_created_1.jpg)
+
+   ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Individual_files_created_2.jpg)
    
    
 6.	These individual files created will inturn trigger another lambda function called Bill Notification Process.
@@ -68,10 +72,21 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 9.	Once local testing is successful, upload the Lambda functions into AWS console. For Input File Split function add permissions to access S3 to the execution role. Similarly for Bill Notification Process function, add permissions to access S3, DynamoDB, SES and API Gateway.
     
 10.	If SMS consent is Yes, then a SMS is sent to the customer using third party application via API Gateway. For this configure a MOCK integration on API Gateway with POST method.
-15.	 If SMS consent is No, then an email is sent to the customer using SES service. For testing purposes, verify the Identities of the destination email ids in the SES console.
+
+    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/API_Gateway.jpg)
+
+    
+11.	 If SMS consent is No, then an email is sent to the customer using SES service. For testing purposes, verify the Identities of the destination email ids in the SES console.
 
 ## Result and Observations:
 
 •	For those customers with SMS consent as Yes a mock SMS is sent via API Gateway.
 
+![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SMS_Sent.jpg)
+
+
 •	For those customers with SMS consent as No an email is sent via SES service.
+
+![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Email_sent_1.jpg)
+
+![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Email_sent_2.jpg)
