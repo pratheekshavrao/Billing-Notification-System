@@ -25,4 +25,5 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 ## Result and Observations:
 
 •	For those customers with SMS consent as Yes a mock SMS is sent via API Gateway.
+
 •	For those customers with SMS consent as No an email is sent via SES service.
