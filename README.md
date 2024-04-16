@@ -16,13 +16,13 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 
     ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_Server2.jpg)
    
-3.	Once the server is setup, then add users to it by giving them appropriate permissions to access the S3 bucket into which files are to be uploaded.
+2.	Once the server is setup, then add users to it by giving them appropriate permissions to access the S3 bucket into which files are to be uploaded.
 
    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_User_1.jpg)
 
    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_User_2.jpg)
    
-5.	By using WinSCP tool, input the server access credentials and securely upload the invoice file which gets uploaded into S3 bucket into Input folder.
+3.	By using WinSCP tool, input the server access credentials and securely upload the invoice file which gets uploaded into S3 bucket into Input folder.
 
    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/SFTP_Access_1.jpg)
 
