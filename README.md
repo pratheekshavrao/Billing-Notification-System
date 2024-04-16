@@ -22,3 +22,7 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 10.	 If SMS consent is Yes, then a SMS is sent to the customer using third party application via API Gateway. For this configure a MOCK integration on API Gateway with POST method.
 11.	 If SMS consent is No, then an email is sent to the customer using SES service. For testing purposes, verify the Identities of the destination email ids in the SES console.
 
+## Result and Observations:
+
+•	For those customers with SMS consent as Yes a mock SMS is sent via API Gateway.
+•	For those customers with SMS consent as No an email is sent via SES service.
