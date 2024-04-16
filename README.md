@@ -38,9 +38,15 @@ Create an S3 bucket named billing-notification-system with Input prefix. Also cr
 
    ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Input_file.jpg)
    
-7.	The file uploaded into the bucket will trigger Input File Split lambda function.
-8.	The Input File Split lambda function will split the records read from invoice file into individual json files for each customer. These files are stored in /individual-json prefix in the same S3 bucket.
-9.	These individual files created will inturn trigger another lambda function called Bill Notification Process.
+4.	The file uploaded into the bucket will trigger Input File Split lambda function.
+
+   ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Input_File_Split_Trigger.jpg)
+   
+5.	The Input File Split lambda function will split the records read from invoice file into individual json files for each customer. These files are stored in /individual-json prefix in the same S3 bucket.
+
+   ![alt text](https://github.com/pratheekshavrao/Billing-Notification-System/blob/main/images/Input_File_Split_Lambda.jpg)
+   
+6.	These individual files created will inturn trigger another lambda function called Bill Notification Process.
 10.	The Bill Notification Process lambda will read each individual file and fetch customer data from Customer Profile table to determine the SMS consent pre-selected by the customer. ( DynaomoDB table has been pre-created and populated with Customer Profile data with customer_id as partition key).
 11.	For local testing of Lambda functions, download the functions to Cloud9 environment, create event.json and template .yaml files. Use below code from terminal to test the functions.
 12.	Once local testing is successful, upload the Lambda functions into AWS console. For Input File Split function add permissions to access S3 to the execution role. Similarly for Bill Notification Process function, add permissions to access S3, DynamoDB, SES and API Gateway.
